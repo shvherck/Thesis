@@ -17,6 +17,8 @@ CS_data$condition <- paste(CS_data$Block, "_", CS_data$Switch, sep = "")
 head(CS_data)
 
 trimmedCS <- sdTrim(data = CS_data, minRT = 0, sd = 2.5, perCondition = FALSE, perParticipant = TRUE, returnType = "raw", digits = 0)
+# This function also removes error trials, 'omitErrors' is by default set to TRUE)
+# https://www.jimgrange.org/post/update-to-trimr-a-response-time-trimming-package-in-r/#sd_criterion
 trimmedCS$condition = NULL
 trimmedCS
 
@@ -41,6 +43,8 @@ S_data$condition <- paste(S_data$congruency)
 head(S_data)
 
 trimmedS <- sdTrim(data = S_data, minRT = 0, sd = 2.5, perCondition = FALSE, perParticipant = TRUE, returnType = "raw", digits = 0)
+# This function also removes error trials, 'omitErrors' is by default set to TRUE)
+# https://www.jimgrange.org/post/update-to-trimr-a-response-time-trimming-package-in-r/#sd_criterion
 trimmedS$condition = NULL
 trimmedS
 
